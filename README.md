@@ -43,8 +43,8 @@ Follow these steps to set up the project locally:
     python manage.py migrate
 
 - Run the server:
-      ```bash
-      python manage.py runserver
+    ```bash
+    python manage.py runserver
 
 5. **Access the application**:
   Open your browser and go to http://127.0.0.1:8000/.
