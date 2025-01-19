@@ -33,19 +33,18 @@ Follow these steps to set up the project locally:
 4. **Set up environment variables**:
     Create a .env file in the project directory with the following content:
   
-    ```bash
-    SECRET_KEY=your-secret-key
-    DEBUG=True
+      ```bash
+      SECRET_KEY=your-secret-key
+      DEBUG=True
     
-  - Apply migrations:
-
-  ```bash
+- Apply migrations:
+    ```bash
     python manage.py makemigrations
     python manage.py migrate
-    Run the server:
 
-  ```bash
-    python manage.py runserver
+- Run the server:
+      ```bash
+      python manage.py runserver
 
-5. Access the application:
+5. **Access the application**:
   Open your browser and go to http://127.0.0.1:8000/.
