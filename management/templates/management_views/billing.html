@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Create Bill</h2>
+<form method="POST">
+    {% csrf_token %}
+    <div id="products">
+        <div class="form-group">
+            <label>Product</label>
+            <select name="products" class="form-control">
+                {% for product in products %}
+                <option value="{{ product.id }}">{{ product.name }} - ${{ product.price }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" name="quantities" class="form-control" min="1" placeholder="quantity">
+        </div>
+    </div>
+    <button type="button" id="add" class="btn btn-secondary mt-2">Add other product</button>
+    <button type="submit" class="btn btn-primary mt-2">Create Bill</button>
+</form>
+
+<script>
+    document.getElementById('add').addEventListener('click', () => {
+        const productsDiv = document.getElementById('products');
+        const newProduct = productsDiv.children[0].cloneNode(true);
+        productsDiv.appendChild(newProduct);
+    });
+</script>
+{% endblock %}

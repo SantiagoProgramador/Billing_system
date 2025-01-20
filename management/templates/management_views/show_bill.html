@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Bill #{{ bill.id }}</h2>
+<p><strong>Date:</strong> {{ bill.date }}</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for detail in bill.details.all %}
+        <tr>
+            <td>{{ detail.product.name }}</td>
+            <td>{{ detail.quantity }}</td>
+            <td>${{ detail.subtotal }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p><strong>Total:</strong> ${{ total }}</p>
+{% endblock %}
